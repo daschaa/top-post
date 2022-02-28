@@ -1,0 +1,29 @@
+{
+  "name": "hacker-news-cli",
+  "version": "0.0.1",
+  "description": "Simple CLI for Hacker News",
+  "homepage": "https://github.com/daschaa/hacker-news-cli",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daschaa/hacker-news-cli"
+  },
+  "main": "index.js",
+  "bin": "./index.js",
+  "scripts": {
+    "build": "ncc build index.js --license licenses.txt"
+  },
+  "keywords": [
+    "cli",
+    "hackernews",
+    "hn",
+    "ycombinator"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "chalk": "^5.0.0",
+    "command-line-args": "^5.2.1",
+    "nanospinner": "^1.0.0"
+  }
+}
