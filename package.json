@@ -1,7 +1,7 @@
 {
   "name": "hacker-news-cli",
   "version": "0.0.1",
-  "description": "Simple CLI for Hacker News",
+  "description": "⚙️ Show Hacker News articles in the terminal",
   "homepage": "https://github.com/daschaa/hacker-news-cli",
   "type": "module",
   "repository": {
