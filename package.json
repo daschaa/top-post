@@ -2,11 +2,11 @@
   "name": "top-post",
   "version": "0.0.1",
   "description": "⚙️ Show Hacker News articles in the terminal",
-  "homepage": "https://github.com/daschaa/hacker-news-cli",
+  "homepage": "https://github.com/daschaa/top-post",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/daschaa/hacker-news-cli"
+    "url": "https://github.com/daschaa/top-post"
   },
   "main": "index.js",
   "bin": "./index.js",
