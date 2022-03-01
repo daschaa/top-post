@@ -8,8 +8,24 @@
     "type": "git",
     "url": "https://github.com/daschaa/top-post"
   },
-  "main": "index.js",
-  "bin": "./index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest --config jestconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "lib/**/*",
+    "assets/demo.gif"
+  ],
+  "bin": "lib/index.js",
   "keywords": [
     "cli",
     "hackernews",
@@ -22,5 +38,16 @@
     "chalk": "^5.0.0",
     "command-line-args": "^5.2.1",
     "nanospinner": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/command-line-args": "^5.2.0",
+    "@types/jest": "^27.4.1",
+    "esbuild": "^0.14.23",
+    "jest": "^27.5.1",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.1.3",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.6.2"
   }
 }
