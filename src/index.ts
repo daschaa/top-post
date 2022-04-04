@@ -21,7 +21,7 @@ const printItemsToConsole = (start: number, end: number, slicedItems: any[]) => 
 };
 
 const printTableToConsole = (start: number, end: number, slicedItems: any[]) => {
-  let articles = [];
+  const articles = [];
   for (let i = start; i < end; i++) {
     const title = slicedItems[i].title;
     let content;
@@ -31,8 +31,8 @@ const printTableToConsole = (start: number, end: number, slicedItems: any[]) => 
       content = `Text: ${slicedItems[i].text}`;
     }
     articles.push({
-      title: title,
-      content: content,
+      title,
+      content,
     });
   }
   printTable(articles);
