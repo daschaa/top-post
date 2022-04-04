@@ -5,14 +5,17 @@ import commandLineArgs from 'command-line-args';
 import { fetchTopStories, getMultipleItems } from './utils.js';
 
 const printItemsToConsole = (start: number, end: number, slicedItems: any[]) => {
+  console.log(`+---`);
   for (let i = start; i < end; i++) {
-    console.log(`${chalk.green(`Number ${i + 1}`)}`);
-    console.log(`Title: ${slicedItems[i].title}`);
+    const title = slicedItems[i].title;
+    let content;
     if (slicedItems[i].url) {
-      console.log(`URL: ${slicedItems[i].url}`);
+      content = `URL: ${slicedItems[i].url}`;
     } else if (slicedItems[i].text) {
-      console.log(`Text: ${slicedItems[i].text}`);
+      content = `Text: ${slicedItems[i].text}`;
     }
+    console.log(`${chalk.red(title)} | ${content}`);
+    console.log(`+---`);
   }
 };
 
@@ -31,12 +34,12 @@ const prettyPrintTopItems = async (start: number, end: number): Promise<any> => 
   printItemsToConsole(start, end, slicedItems);
 };
 const optionDefinitions = [
-  { name: 'start', alias: 's', type: Number, defaultValue: 0 },
-  { name: 'end', alias: 'e', type: Number, defaultValue: 1 },
+  { name: 'from', alias: 'f', type: Number, defaultValue: 0 },
+  { name: 'to', alias: 't', type: Number, defaultValue: 3 },
 ];
 
-const { start, end } = commandLineArgs(optionDefinitions, {
+const { from, to } = commandLineArgs(optionDefinitions, {
   partial: true,
   caseInsensitive: true,
 });
-prettyPrintTopItems(start, end);
+prettyPrintTopItems(from, to);
