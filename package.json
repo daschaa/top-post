@@ -1,6 +1,6 @@
 {
   "name": "top-post",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "⚙️ Show Hacker News articles in the terminal",
   "homepage": "https://github.com/daschaa/top-post",
   "type": "module",
