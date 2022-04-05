@@ -59,7 +59,7 @@ const prettyPrintTopItems = async (start: number, end: number, tablePrint: boole
 const optionDefinitions = [
   { name: 'from', alias: 'f', type: Number, defaultValue: 0 },
   { name: 'to', alias: 't', type: Number, defaultValue: 3 },
-  { name: 'table', alias: 'b', type: Boolean, defaultValue: 'false' },
+  { name: 'table', alias: 'b', type: Boolean, defaultValue: false },
 ];
 
 const { from, to, table } = commandLineArgs(optionDefinitions, {
