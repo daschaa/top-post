@@ -6,17 +6,15 @@ import { fetchTopStories, getMultipleItems } from './utils.js';
 import { printTable } from 'console-table-printer';
 
 const printItemsToConsole = (start: number, end: number, slicedItems: any[]) => {
-  console.log(`+---`);
   for (let i = start; i < end; i++) {
-    const title = slicedItems[i].title;
+    const title = `${i + 1}. ${slicedItems[i].title}`;
     let content;
     if (slicedItems[i].url) {
-      content = `URL: ${slicedItems[i].url}`;
+      content = `${chalk.dim('URL: ')}${slicedItems[i].url}`;
     } else if (slicedItems[i].text) {
-      content = `Text: ${slicedItems[i].text}`;
+      content = `${chalk.dim('Text: ')}${slicedItems[i].text}`;
     }
-    console.log(`${chalk.red(title)} | ${content}`);
-    console.log(`+---`);
+    console.log(`${title} | ${content}`);
   }
 };
 
