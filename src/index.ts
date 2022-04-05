@@ -4,6 +4,7 @@ import chalk from 'chalk';
 import commandLineArgs from 'command-line-args';
 import { fetchTopStories, getMultipleItems } from './utils.js';
 import { printTable } from 'console-table-printer';
+import { usage } from './help.js';
 
 const printItemsToConsole = (start: number, end: number, slicedItems: any[]) => {
   for (let i = start; i < end; i++) {
@@ -58,10 +59,15 @@ const optionDefinitions = [
   { name: 'from', alias: 'f', type: Number, defaultValue: 0 },
   { name: 'to', alias: 't', type: Number, defaultValue: 3 },
   { name: 'table', alias: 'b', type: Boolean, defaultValue: false },
+  { name: 'help', alias: 'h', type: Boolean, defaultValue: false },
 ];
 
-const { from, to, table } = commandLineArgs(optionDefinitions, {
+const { from, to, table, help } = commandLineArgs(optionDefinitions, {
   partial: true,
   caseInsensitive: true,
 });
-prettyPrintTopItems(from, to, table);
+if (help) {
+  console.log(usage);
+} else {
+  prettyPrintTopItems(from, to, table);
+}
