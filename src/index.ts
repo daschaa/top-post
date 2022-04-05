@@ -10,7 +10,7 @@ const printItemsToConsole = (start: number, end: number, slicedItems: any[]) => 
     const title = `${i + 1}. ${slicedItems[i].title}`;
     let content;
     if (slicedItems[i].url) {
-      content = `${chalk.dim('URL: ')}${slicedItems[i].url}`;
+      content = `${chalk.dim('URL: ')}${chalk.blueBright(slicedItems[i].url)}`;
     } else if (slicedItems[i].text) {
       content = `${chalk.dim('Text: ')}${slicedItems[i].text}`;
     }
